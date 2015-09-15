@@ -5,13 +5,13 @@ var request = require('request');
 var cheerio = require('cheerio');
 var S = require('string');
 var Q = require('Q');
-var parser = require('module/parser');
+var Parser = require('./module/parser');
 /**
  *
  * @param conf { lang : 'de', source : 'digitec'(default)|'galaxus' }
  * @returns {*|promise}
  */
-var parser = function parserF(conf) {
+var parseSite = function parseSiteF(conf) {
     conf = conf | {};
     var deferred = Q.defer();
     var lang = conf.lang || 'en';
@@ -20,9 +20,9 @@ var parser = function parserF(conf) {
     request(url, function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
-            var sold = getSold($);
-            var max = getMax($);
-            var text = getText($);
+            var sold = Parser.getSold($);
+            var max = Parser.getMax($);
+            var text = Parser.getText($);
             text = S(text).collapseWhitespace().s;
             deferred.resolve({sold: sold, available: max, description: text, url: url});
         } else {
@@ -31,4 +31,4 @@ var parser = function parserF(conf) {
     });
     return deferred.promise;
 };
-module.exports = parser;
+module.exports = parseSite;
