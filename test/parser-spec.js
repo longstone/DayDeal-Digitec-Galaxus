@@ -4,7 +4,7 @@
 'use strict';
 var assert = require("assert");
 var cheerio = require('cheerio');
-var parser = require('./../modul/parser');
+var parser = require('././parser');
 
 var fs = require('fs');
 
