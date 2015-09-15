@@ -1,4 +1,5 @@
-# ignore modules
+# ignore node
+npm-debug.log
 node_modules/*
 # idea
 .idea/*
