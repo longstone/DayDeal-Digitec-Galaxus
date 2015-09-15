@@ -1,0 +1,28 @@
+{
+  "name": "daydeal-digitec-galaxus",
+  "version": "1.0.0",
+  "description": "parses the daydeal offer from digitec.ch or galaxus.ch, both pages have the same layout",
+  "main": "lib.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/longstone/DayDeal-Digitec-Galaxus"
+  },
+  "keywords": [
+    "digitec",
+    "daydeal",
+    "galaxus",
+    "parsing",
+    "json"
+  ],
+  "author": "longstone <contact@longstone.ch>",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^0.19.0",
+    "q": "^1.4.1",
+    "request": "^2.62.0",
+    "string": "^3.3.1"
+  }
+}
