@@ -1,6 +1,6 @@
 {
   "name": "daydeal-digitec-galaxus",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "parses the daydeal offer from digitec.ch or galaxus.ch, both pages have the same layout",
   "main": "lib.js",
   "scripts": {
