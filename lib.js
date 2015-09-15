@@ -5,6 +5,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var S = require('string');
 var Q = require('Q');
+var parser = require('module/parser');
 /**
  *
  * @param conf { lang : 'de', source : 'digitec'(default)|'galaxus' }
@@ -19,9 +20,9 @@ var parser = function parserF(conf) {
     request(url, function (error, response, html) {
         if (!error && response.statusCode == 200) {
             var $ = cheerio.load(html);
-            var sold = $($('.product-box .stock strong')[0]).text();
-            var max = $($('.product-box .stock small')[0]).text();
-            var text = $($('.product-box .product-text-box')[0]).text();
+            var sold = getSold($);
+            var max = getMax($);
+            var text = getText($);
             text = S(text).collapseWhitespace().s;
             deferred.resolve({sold: sold, available: max, description: text, url: url});
         } else {
