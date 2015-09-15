@@ -12,7 +12,7 @@ var Parser = require('./module/parser');
  * @returns {*|promise}
  */
 var parseSite = function parseSiteF(conf) {
-    conf = conf | {};
+    conf = conf || {};
     var deferred = Q.defer();
     var lang = conf.lang || 'en';
     var source = conf.source || 'digitec';
