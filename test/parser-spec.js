@@ -61,7 +61,7 @@ describe('test getDescription', function () {
     it('should get "CHF 65.- was 99.- Infiniti Super Speed Buggy"', function () {
         var actual = 'CHF 65.– was 99.– Infiniti Super Speed Buggy';
         var expected = parser.getText($soldOut);
-        assert.deepEqual(actual, expected);
+        assert.equal(actual, expected);
     });
 
 });
